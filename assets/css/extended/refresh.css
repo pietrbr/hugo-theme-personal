@@ -1,0 +1,159 @@
+/* Design refresh: one type superfamily across all touchpoints.
+   Text voice: Source Sans 3 (same face as the CV). Structural voice
+   (nav, labels, buttons, metadata): Source Code Pro, echoing the
+   favicon. Accent: signal blue (--darkcolor), a sharpened descendant
+   of the original slate. */
+
+@font-face {
+    font-family: "Source Sans 3";
+    src: url("/fonts/source-sans-3-var.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Source Sans 3";
+    src: url("/fonts/source-sans-3-italic-var.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("/fonts/source-code-pro-var.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---- global type ------------------------------------------------- */
+
+body {
+    font-family: var(--sans);
+}
+
+/* ---- mono structural voice --------------------------------------- */
+
+.logo a,
+#menu a,
+.breadcrumbs,
+.post-meta,
+.entry-footer,
+.footer,
+.post-tags a,
+.paginav a {
+    font-family: var(--mono);
+}
+
+.logo a {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#menu a {
+    font-size: 14px;
+}
+
+/* ---- homepage hero ------------------------------------------------ */
+
+.profile .profile_inner h1 {
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+.profile .profile_inner > span p {
+    margin: 2px 0;
+    font-size: 17px;
+    color: var(--secondary);
+}
+
+/* first subtitle line becomes the mono role eyebrow */
+.profile .profile_inner > span p:first-child {
+    margin: 6px 0 10px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--darkcolor);
+}
+
+/* quiet bordered buttons instead of filled pills */
+.button {
+    background: transparent;
+    border: 1px solid var(--tertiary);
+    border-radius: 4px;
+    padding: 6px 6px;
+    font-family: var(--mono);
+    font-size: 13px;
+}
+
+.button:hover {
+    background: transparent;
+    border-color: var(--darkcolor);
+    color: var(--darkcolor);
+}
+
+/* ---- publication list --------------------------------------------- */
+
+.post-entry .entry-header h2 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: -0.005em;
+}
+
+.entry-content {
+    font-family: var(--sans);
+    font-size: 16px;
+}
+
+.entry-footer {
+    font-size: 12px;
+    color: var(--secondary);
+}
+
+/* ---- single page / publication ------------------------------------ */
+
+.post-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* section labels: Download / Abstract / Citation */
+.post-content h2 {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--darkcolor);
+}
+
+.post-content a {
+    color: var(--darkcolor);
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-color: var(--lightcolor);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.post-content a:hover {
+    text-decoration-color: var(--darkcolor);
+}
+
+/* ---- details ------------------------------------------------------- */
+
+::selection {
+    background: var(--lightcolor);
+}
+
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible {
+    outline: 2px solid var(--darkcolor);
+    outline-offset: 2px;
+}
