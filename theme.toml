@@ -1,0 +1,5 @@
+name = "Personal"
+license = "MIT"
+licenselink = "https://github.com/pietrbr/hugo-theme-personal/blob/main/LICENSE"
+description = "Personal overlay theme for pietrbr.github.io, stacked on top of PaperMod"
+min_version = "0.146.0"

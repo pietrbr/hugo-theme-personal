@@ -1,0 +1,16 @@
+{{- /* Google Scholar indexing tags (citation_*) for publication pages.
+     citation_pdf_url is extracted from the page's Download link. */}}
+{{- if and (eq .Section "publications") .IsPage }}
+<meta name="citation_title" content="{{ .Title }}">
+{{- range .Params.author }}
+<meta name="citation_author" content="{{ . }}">
+{{- end }}
+<meta name="citation_publication_date" content='{{ .Date.Format "2006/01/02" }}'>
+{{- $pdf := "" }}
+{{- range first 1 (findRE `\[(?:Paper|Patent Document|Thesis)\]\(([^)]+)\)` .RawContent) }}
+{{- $pdf = replaceRE `^.*\(([^)]+)\)$` "$1" . }}
+{{- end }}
+{{- with $pdf }}
+<meta name="citation_pdf_url" content="{{ . }}">
+{{- end }}
+{{- end }}
