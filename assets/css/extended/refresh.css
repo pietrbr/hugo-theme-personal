@@ -96,7 +96,35 @@ body {
     color: var(--darkcolor);
 }
 
+/* code / BibTeX blocks: light wash instead of a dark slab */
+.post-content .highlight:not(table) {
+    background: var(--wash) !important; /* base rule uses !important too */
+    border: 1px solid var(--border);
+}
+
+.post-content .highlight pre {
+    background: transparent !important; /* chroma sets an inline background */
+    padding: 14px 16px;
+}
+
+.post-content pre code {
+    background: transparent;
+    color: var(--content);
+    font-family: var(--mono);
+    font-size: 13.5px;
+}
+
 /* ---- publication list --------------------------------------------- */
+
+.entry-eyebrow {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--darkcolor);
+    margin-bottom: 8px;
+}
 
 .post-entry .entry-header h2 {
     font-family: var(--sans);
@@ -156,4 +184,34 @@ button:focus-visible,
 .button:focus-visible {
     outline: 2px solid var(--darkcolor);
     outline-offset: 2px;
+}
+
+/* theme toggle lives at the far right of the menu */
+#menu #theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    height: var(--header-height);
+    cursor: pointer;
+}
+
+/* floating theme toggle on the headerless hero page */
+.hero-toggle {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+}
+
+.hero-toggle #theme-toggle {
+    cursor: pointer;
+    color: var(--secondary);
+}
+
+.hero-toggle #theme-toggle:hover {
+    color: var(--darkcolor);
+}
+
+/* dark mode: settle the photo's warm background against the dark page */
+.dark .profile img {
+    border-color: rgb(82, 86, 94);
+    box-shadow: 0 0 0 4px rgb(255 255 255 / 0.04);
 }

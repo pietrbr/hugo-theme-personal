@@ -19,6 +19,8 @@
 " id="top">
     {{- if not .IsHome  }}
     {{- partialCached "header.html" . .Page -}}
+    {{- else }}
+    {{- partial "hero_toggle.html" . -}}
     {{- end }}
     <main class="main">
         {{- block "main" . }}{{ end }}
