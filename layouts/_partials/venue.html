@@ -1,0 +1,8 @@
+{{- /* Publication venue in the post meta line; list.html renders the same
+       value in its eyebrow. */ -}}
+{{- with .Params.venue -}}
+    {{- if or ($.Param "author") ($.Param "ShowReadingTime") (not $.Date.IsZero) $.IsTranslated }}
+        {{- printf "&nbsp;&middot;&nbsp;" | safeHTML -}}
+    {{- end -}}
+    <span>{{ . }}</span>
+{{- end }}

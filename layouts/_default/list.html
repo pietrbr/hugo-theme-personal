@@ -51,7 +51,7 @@
 <article class="{{ $class }}">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
-  {{- $venue := "" }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}
+  {{- $venue := .Params.venue }}
   {{- if $venue }}
   <div class="entry-eyebrow">{{ .Date.Format "2006" }} &middot; {{ $venue }}</div>
   {{- end }}
